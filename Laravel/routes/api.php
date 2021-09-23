@@ -1,6 +1,8 @@
 <?php
 
+use App\Models\Category;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,4 +18,9 @@ use Illuminate\Support\Facades\Route;
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
+});
+
+Route::get('/cat', function () {
+    $cats = Category::find(2)->parent()->get();
+    return response($cats, 200);
 });
