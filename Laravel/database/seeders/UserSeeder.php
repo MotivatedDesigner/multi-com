@@ -15,28 +15,33 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
-        DB::insert(
-            //admin
-            [
-                'name' => 'admin',
-                'email' => 'admin@admin',
-                'password' => Hash::make('admin'),
-                'roll' => 'admin',
-            ],
-            //vendor
-            [
-                'name' => 'vendor',
-                'email' => 'vendor@vendor',
-                'password' => Hash::make('vendor'),
-                'roll' => 'vendor',
-            ],
-            //customer
-            [
-                'name' => 'customer',
-                'email' => 'customer@customer',
-                'password' => Hash::make('customer'),
-                'roll' => 'customer',
-            ],
+        DB::table('users')->insert(
+            [ 
+                //admin
+                [
+                    'name' => 'admin',
+                    'email' => 'admin@admin',
+                    'password' => Hash::make('admin'),
+                    'role' => 'admin',
+                    'avatar' => 'admin.png',
+                ],
+                //vendor
+                [
+                    'name' => 'vendor',
+                    'email' => 'vendor@vendor',
+                    'password' => Hash::make('vendor'),
+                    'role' => 'vendor',
+                    'avatar' => 'vendor.png',
+                ],
+                //customer
+                [
+                    'name' => 'customer',
+                    'email' => 'customer@customer',
+                    'password' => Hash::make('customer'),
+                    'role' => 'customer',
+                    'avatar' => 'customer.png',
+                ],
+            ]
         );
     }
 }
