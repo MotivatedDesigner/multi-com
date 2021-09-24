@@ -20,7 +20,6 @@ class CreateAddressesTable extends Migration
             $table->bigInteger('city_id')->unsigned();
             $table->bigInteger('state_province_id')->unsigned();
             $table->bigInteger('postal_code_id')->unsigned();
-            $table->bigInteger('user_id')->unsigned();
             $table->enum('type',['generated','shipping','billing'])->default('generated');
             $table->timestamps();
         });
