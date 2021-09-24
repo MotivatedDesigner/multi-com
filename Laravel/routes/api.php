@@ -21,6 +21,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::get('/cat', function () {
-    $cats = Category::find(2)->parent()->get();
+    $cats = Category::find(2)->parent;
     return response($cats, 200);
 });

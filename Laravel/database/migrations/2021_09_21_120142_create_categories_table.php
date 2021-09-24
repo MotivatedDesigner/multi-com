@@ -19,7 +19,7 @@ class CreateCategoriesTable extends Migration
             $table->string('slug',50)->unique();
             $table->string('photo',50);
             $table->string('summary');
-            $table->enum('status',['active','inactive']);
+            $table->enum('status',['active','inactive'])->default('active');
             $table->bigInteger('parent_id')->unsigned()->default(1);
             $table->timestamps();
         });
