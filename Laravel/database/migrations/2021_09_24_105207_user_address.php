@@ -17,6 +17,7 @@ class UserAddress extends Migration
             $table->id();
             $table->bigInteger('user_id')->unsigned();
             $table->bigInteger('address_id')->unsigned();
+            $table->enum('type',['generated','shipping','billing'])->default('generated');
             $table->timestamps();
         });
     }
